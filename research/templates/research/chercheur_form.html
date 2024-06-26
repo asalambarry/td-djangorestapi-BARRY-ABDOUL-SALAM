@@ -1,18 +1,8 @@
 <!-- templates/research/chercheur_form.html -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Ajouter/Modifier Chercheur</title>
-</head>
-
-<body>
-    <h1>Ajouter/Modifier Chercheur</h1>
-    <form method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit">Enregistrer</button>
-    </form>
-    <a href="{% url 'chercheur_list' %}">Annuler</a>
-</body>
-
-</html>
+{% extends 'research/base.html' %} {% block title %}Ajouter/Modifier Chercheur{% endblock %} {% block content %}
+<h2>Ajouter/Modifier Chercheur</h2>
+<form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="{% url 'chercheur_list' %}">Annuler</a> {% endblock %}

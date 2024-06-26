@@ -1,23 +1,14 @@
 <!-- templates/research/projet_list.html -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Liste des Projets</title>
-</head>
-
-<body>
-    <h1>Liste des Projets de Recherche</h1>
-    <a href="{% url 'projet_create' %}">Ajouter un Projet</a>
-    <ul>
-        {% for projet in projets %}
-        <li>
-            {{ projet.titre }} ({{ projet.date_debut }} - {{ projet.date_fin_prevue }})
-            <a href="{% url 'projet_update' projet.pk %}">Modifier</a>
-            <a href="{% url 'projet_delete' projet.pk %}">Supprimer</a>
-        </li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+{% extends 'research/base.html' %} {% block title %}Liste des Projets de Recherche{% endblock %} {% block content %}
+<h2>Liste des Projets de Recherche</h2>
+<a href="{% url 'projet_create' %}">Ajouter un Projet</a>
+<ul>
+    {% for projet in projets %}
+    <li>
+        {{ projet.titre }} ({{ projet.date_debut }} - {{ projet.date_fin_prevue }})
+        <a href="{% url 'projet_update' projet.pk %}">Modifier</a>
+        <a href="{% url 'projet_delete' projet.pk %}">Supprimer</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

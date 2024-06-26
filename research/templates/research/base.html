@@ -1,0 +1,20 @@
+<!-- templates/research/base.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Mon Application{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'research/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>{% block header %}Application de Suivi de Projets de Recherche{% endblock %}</h1>
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

@@ -1,19 +1,9 @@
 <!-- templates/research/publication_confirm_delete.html -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Supprimer Publication</title>
-</head>
-
-<body>
-    <h1>Supprimer Publication</h1>
-    <p>Êtes-vous sûr de vouloir supprimer {{ publication.titre }} ?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Oui, supprimer</button>
-    </form>
-    <a href="{% url 'publication_list' %}">Annuler</a>
-</body>
-
-</html>
+{% extends 'research/base.html' %} {% block title %}Supprimer Publication{% endblock %} {% block content %}
+<h2>Supprimer Publication</h2>
+<p>Êtes-vous sûr de vouloir supprimer {{ publication.titre }} ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+</form>
+<a href="{% url 'publication_list' %}">Annuler</a> {% endblock %}

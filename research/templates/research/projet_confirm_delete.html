@@ -1,19 +1,9 @@
 <!-- templates/research/projet_confirm_delete.html -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Supprimer Projet</title>
-</head>
-
-<body>
-    <h1>Supprimer Projet</h1>
-    <p>Êtes-vous sûr de vouloir supprimer {{ projet.titre }} ?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Oui, supprimer</button>
-    </form>
-    <a href="{% url 'projet_list' %}">Annuler</a>
-</body>
-
-</html>
+{% extends 'research/base.html' %} {% block title %}Supprimer Projet{% endblock %} {% block content %}
+<h2>Supprimer Projet</h2>
+<p>Êtes-vous sûr de vouloir supprimer {{ projet.titre }} ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+</form>
+<a href="{% url 'projet_list' %}">Annuler</a> {% endblock %}

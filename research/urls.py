@@ -8,10 +8,10 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from .views import (
-    home,
     create_chercheur, update_chercheur, delete_chercheur, list_chercheurs,
     create_projet, update_projet, delete_projet, list_projets,
-    create_publication, update_publication, delete_publication, list_publications
+    create_publication, update_publication, delete_publication, list_publications,
+    home, signup, login_view
 )
 router = DefaultRouter()
 router.register(r'chercheurs', ChercheurViewSet)
@@ -24,6 +24,8 @@ urlpatterns = [
     # path('', include(router.urls)),
 
     path('', home, name='home'),  # Route pour la page d'accueil
+    path('signup/', signup, name='signup'),
+    path('login/', login_view, name='login'),
     path('chercheurs/', list_chercheurs, name='chercheur_list'),
     path('chercheurs/new/', create_chercheur, name='chercheur_create'),
     path('chercheurs/<int:pk>/edit/', update_chercheur, name='chercheur_update'),
