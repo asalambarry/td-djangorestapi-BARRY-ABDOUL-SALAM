@@ -1,0 +1,18 @@
+<!-- templates/research/publication_form.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajouter/Modifier Publication</title>
+</head>
+
+<body>
+    <h1>Ajouter/Modifier Publication</h1>
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+    <a href="{% url 'publication_list' %}">Annuler</a>
+</body>
+
+</html>

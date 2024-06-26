@@ -1,0 +1,18 @@
+<!-- templates/research/projet_form.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajouter/Modifier Projet</title>
+</head>
+
+<body>
+    <h1>Ajouter/Modifier Projet de Recherche</h1>
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+    <a href="{% url 'projet_list' %}">Annuler</a>
+</body>
+
+</html>

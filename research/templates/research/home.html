@@ -1,0 +1,18 @@
+<!-- templates/research/home.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page d'accueil</title>
+</head>
+
+<body>
+    <h1>Bienvenue à l'application de suivi de projets de recherche</h1>
+    <p>
+        <a href="{% url 'chercheur_list' %}">Voir les chercheurs</a><br>
+        <a href="{% url 'projet_list' %}">Voir les projets</a><br>
+        <a href="{% url 'publication_list' %}">Voir les publications</a>
+    </p>
+</body>
+
+</html>

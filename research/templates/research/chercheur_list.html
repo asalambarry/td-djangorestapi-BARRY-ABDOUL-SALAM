@@ -1,0 +1,23 @@
+<!-- templates/research/chercheur_list.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Liste des Chercheurs</title>
+</head>
+
+<body>
+    <h1>Liste des Chercheurs</h1>
+    <a href="{% url 'chercheur_create' %}">Ajouter un Chercheur</a>
+    <ul>
+        {% for chercheur in chercheurs %}
+        <li>
+            {{ chercheur.nom }} ({{ chercheur.specialite }})
+            <a href="{% url 'chercheur_update' chercheur.pk %}">Modifier</a>
+            <a href="{% url 'chercheur_delete' chercheur.pk %}">Supprimer</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
