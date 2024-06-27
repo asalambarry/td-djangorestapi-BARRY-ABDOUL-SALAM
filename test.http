@@ -1,0 +1,124 @@
+### Obtenir un token JWT
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### Renouveler un token JWT
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+"refresh": "{{refresh_token}}"
+}
+
+### Lister les chercheurs
+GET http://127.0.0.1:8000/api/chercheurs/
+Authorization: Bearer {{access_token}}
+
+### Créer un chercheur
+POST http://127.0.0.1:8000/api/chercheurs/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "nom": "Jean Dupont",
+  "specialite": "Physique"
+}
+
+### Détails d'un chercheur
+GET http://127.0.0.1:8000/api/chercheurs/1/
+Authorization: Bearer {{access_token}}
+
+### Mettre à jour un chercheur
+PUT http://127.0.0.1:8000/api/chercheurs/1/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "nom": "Jean Dupont",
+  "specialite": "Chimie"
+}
+
+### Supprimer un chercheur
+DELETE http://127.0.0.1:8000/api/chercheurs/1/
+Authorization: Bearer {{access_token}}
+
+### Lister les projets
+GET http://127.0.0.1:8000/api/projets/
+Authorization: Bearer {{access_token}}
+
+### Créer un projet
+POST http://127.0.0.1:8000/api/projets/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "titre": "Projet Alpha",
+  "description": "Description du projet Alpha",
+  "date_debut": "2023-01-01",
+  "date_fin_prevue": "2023-12-31",
+  "chef_projet": 1,
+  "chercheurs": [1]
+}
+
+### Détails d'un projet
+GET http://127.0.0.1:8000/api/projets/1/
+Authorization: Bearer {{access_token}}
+
+### Mettre à jour un projet
+PUT http://127.0.0.1:8000/api/projets/1/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "titre": "Projet Alpha",
+  "description": "Description mise à jour du projet Alpha",
+  "date_debut": "2023-01-01",
+  "date_fin_prevue": "2023-12-31",
+  "chef_projet": 1,
+  "chercheurs": [1]
+}
+
+### Supprimer un projet
+DELETE http://127.0.0.1:8000/api/projets/1/
+Authorization: Bearer {{access_token}}
+
+### Lister les publications
+GET http://127.0.0.1:8000/api/publications/
+Authorization: Bearer {{access_token}}
+
+### Créer une publication
+POST http://127.0.0.1:8000/api/publications/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "titre": "Publication sur le Projet Alpha",
+  "resume": "Résumé de la publication sur le projet Alpha",
+  "projet": 1,
+  "date_publication": "2023-06-01"
+}
+
+### Détails d'une publication
+GET http://127.0.0.1:8000/api/publications/1/
+Authorization: Bearer {{access_token}}
+
+### Mettre à jour une publication
+PUT http://127.0.0.1:8000/api/publications/1/
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "titre": "Publication mise à jour sur le Projet Alpha",
+  "resume": "Résumé mis à jour de la publication sur le projet Alpha",
+  "projet": 1,
+  "date_publication": "2023-06-01"
+}
+
+### Supprimer une publication
+DELETE http://127.0.0.1:8000/api/publications/1/
+Authorization: Bearer {{access_token}}
